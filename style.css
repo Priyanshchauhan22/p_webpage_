@@ -1,0 +1,270 @@
+/* --- General Styles & Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Consolas;
+    background-color: #fdfdff;
+    color: #323fa4;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 40px;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+    color: #e22b40;
+}
+
+p {
+    color: #323fa4;
+}
+
+a {
+    color: #323fa4;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8a2be2
+}
+
+/* --- Sidebar (Left Column) --- */
+.sidebar {
+    flex: 0 0 280px; /* Do not grow, do not shrink, base width 280px */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.sidebar h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.sidebar > p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.sidebar .contact-info > p {  
+    color: #e22b40;
+}
+
+.contact-info {
+    margin: 30px 0;
+    font-size: 0.9rem;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a i {
+    font-size: 1.5rem;
+    color: #323fa4;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover i {
+    font-size: 1.7rem;
+    color: #8a2be2;
+    transition: color 0.3s ease;
+}
+
+.hire-me-btn {
+    display: inline-block;
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.hire-me-btn:hover {
+    background-color: #f0e6ff;
+    border: 1px solid #c5a8ed;
+}
+
+
+/* --- Main Content (Right Column) --- */
+.main-content {
+    flex-grow: 1;
+}
+
+.main-content section {
+    margin-bottom: 50px;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ▼▼▼ SECTION UPDATED ▼▼▼ */
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.project-grid a {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the image stays within the rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-grid a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px #7324b8;
+}
+
+.project-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Removes any extra space below the image */
+}
+/* ▲▲▲ SECTION UPDATED ▲▲▲ */
+
+
+/* Resume Section */
+#resume p {
+    max-width: 60ch; /* Limit line length for readability */
+}
+
+
+/* Experience Section */
+.experience-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.experience-item .date {
+    flex-basis: 120px;
+    flex-shrink: 0;
+    color: #323fa4;
+    font-size: 0.9rem;
+}
+
+.experience-item .details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.experience-item .details p {
+    font-size: 0.95rem;
+    color: #323fa4;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .sidebar {
+        flex: 1;
+        width: 100%;
+        align-items: center; /* Center items on smaller screens */
+        text-align: center;
+    }
+    
+    .sidebar > p {
+        max-width: 400px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .hire-me-btn {
+        max-width: 280px; /* Give the button a max width */
+    }
+
+    .experience-item {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Resume Button and Link Styles */
+.main-content h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-content h2 a:hover {
+    font-size: 1.55rem ;
+    color: #e22b8d;
+    transition: color 0.3s ease;
+}
+
+.resume-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 1px solid #c5a8ed;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #5d3a9b;
+    background-color: #f0e6ff;
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+    color: #fff;
+    transition: color 0.3s ease;
+}
